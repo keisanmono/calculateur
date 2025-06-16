@@ -1,0 +1,191 @@
+/* css/tno_game_style.css */
+
+/* 这个文件用于 TNO 游戏页面的特定样式。 */
+/* 假设主 style.css 提供了一些基础样式，如 body 的全局字体、颜色等。 */
+/* 如果没有，你需要在这里定义更全面的基础样式。 */
+
+body.tno-game-active-theme {
+    background-color: #2d2d2d; /* TNO暗色背景 */
+    color: #e0e0e0; /* 默认文字颜色 */
+    padding: 0; /* 通常 body 不需要内边距 */
+    margin: 0;
+    overflow-x: hidden; /* 防止因 game-container 的 margin 产生水平滚动条 */
+    font-family: 'Noto Sans SC', sans-serif; /* 默认中文字体 */
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 40px auto; /* 增加上下边距，使其不在屏幕边缘 */
+    background-color: #31373f; /* TNO面板颜色 */
+    padding: 25px; /* 增加内边距 */
+    border-radius: 5px;
+    border: 1px solid #1a1f25;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6); /* 更明显的阴影 */
+}
+
+.game-container h1 {
+    color: #ffc107; /* TNO黄色 */
+    text-align: center;
+    font-family: 'Roboto Condensed', 'Noto Sans SC', sans-serif; /* TNO常用标题字体 */
+    margin-bottom: 25px; /* 增加与状态栏的间距 */
+    font-size: 2.2em; /* 调整字号 */
+    text-transform: uppercase; /* TNO标题通常大写 */
+    letter-spacing: 1px; /* 轻微字间距 */
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px; /* 增加状态项之间的间隙 */
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #2a2e34; /* TNO更暗的面板 */
+    border-radius: 4px; /* 更锐利的边角 */
+    border: 1px solid #1e2227;
+}
+
+.status-bar div {
+    font-size: 1.1em;
+    background-color: #24292e;
+    padding: 10px 15px; /* 增加内边距 */
+    border-radius: 3px;
+    min-width: 200px; /* 确保有足够宽度展示内容 */
+    text-align: center;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /* 轻微内阴影 */
+    font-family: 'Roboto Condensed', 'Noto Sans SC', sans-serif;
+}
+
+.status-bar span {
+    font-weight: bold;
+    color: #ffc107;
+    margin-left: 8px; /* 增加数值与标签的间距 */
+}
+
+#advance-time-btn,
+#advance-week-btn {
+    background-color: #4a5562;
+    color: #e0e0e0;
+    border: 1px solid #5a6572;
+    padding: 10px 20px;
+    margin: 0 10px 20px 0; /* 调整外边距，使其不紧贴 */
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', 'Noto Sans SC', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase; /* 按钮文字大写 */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+#advance-time-btn:hover,
+#advance-week-btn:hover {
+    background-color: #5a6572;
+    transform: translateY(-1px);
+}
+#advance-time-btn:disabled,
+#advance-week-btn:disabled {
+    background-color: #3e454c;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.event-popup {
+    display: none;
+    background-color: #3c424a;
+    padding: 30px; /* 增加内边距 */
+    border-radius: 4px;
+    border: 1px solid #1a1f25;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* 更深的阴影 */
+}
+
+.event-popup h2 {
+    color: #ffc107;
+    font-family: "UnifrakturMaguntia", cursive; /* Gothic字体 */
+    font-weight: 400; /* UnifrakturMaguntia 通常只有 400 */
+    font-style: normal;
+    font-size: 2.5em; /* 增大事件标题字号 */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    line-height: 1.2; /* 调整行高以防过高 */
+}
+
+.event-popup p {
+    margin-bottom: 25px;
+    line-height: 1.75; /* TNO事件描述通常行高较大 */
+    font-size: 1.1em; /* 增大描述字号 */
+    color: #c8d8e8;
+    text-align: justify;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.event-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 选项之间的间距 */
+}
+
+.event-options button {
+    background: linear-gradient(to bottom, #4f5863, #3f4750); /* TNO 选项按钮更细致的渐变 */
+    color: #e8e8e8; /* 选项文字颜色 */
+    border: 1px solid #606973;
+    border-top-color: #707983;
+    border-left-color: #707983;
+    padding: 14px 18px; /* 增加选项按钮内边距 */
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Roboto Condensed', 'Noto Sans SC', sans-serif;
+    font-size: 1.05em; /* 选项文字字号 */
+    text-align: left;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 1px rgba(0,0,0,0.2); /* 更细致的阴影 */
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.event-options button:hover {
+    background: linear-gradient(to bottom, #5c6670, #4c545e);
+    transform: translateY(-1px);
+    color: #fff; /* 悬停时文字更亮 */
+}
+
+#game-log {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #24292e;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 0.95em; /* 日志字体稍大 */
+    border: 1px solid #1a1f25;
+    line-height: 1.6;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+#game-log p {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #31373f;
+    padding-bottom: 8px;
+    color: #b0b0b0; /* 日志文本颜色调整 */
+}
+#game-log p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* 滚动条样式 (可选，但可以提升TNO感觉) */
+#game-log::-webkit-scrollbar {
+    width: 8px;
+}
+#game-log::-webkit-scrollbar-track {
+    background: #2a2e34;
+    border-radius: 4px;
+}
+#game-log::-webkit-scrollbar-thumb {
+    background-color: #4a5562;
+    border-radius: 4px;
+    border: 1px solid #3a4552;
+}
+#game-log::-webkit-scrollbar-thumb:hover {
+    background-color: #5a6572;
+}

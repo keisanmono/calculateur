@@ -1,19 +1,42 @@
 ---
+// src/layouts/BaseLayout.astro
+import Sidebar from '../components/Sidebar.astro';
 
+// 接收一个 "title" 属性，用于设置每个页面的标题
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
 ---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | 🌸 我的二次元小窝 🌸</title> <!-- 动态标题 -->
+    <link rel="stylesheet" href="/css/style.css"> <!-- 注意路径现在是 /css -->
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background"></div>
 
-<html lang="zh-cn">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        	<a href="/">首页</a>
-			<a href="/about/">关于</a>
-            <a href="/blog/">博客</a>
-		<h1>我的 Astro 站点</h1>
-	</body>
+    <!-- 侧边栏组件 -->
+    <Sidebar />
+
+    <!-- 切换按钮 -->
+    <button id="toggle-btn">☰</button>
+
+    <!-- 页面内容容器 -->
+    <div class="content scroll-container">
+        <!-- 这是插槽，每个页面的独特内容会在这里显示 -->
+        <slot />
+        
+        <footer>
+            <p>© 2024 我的博客 | Powered by Astro</p>
+        </footer>
+    </div>
+
+    <!-- 全局JS脚本 -->
+    <script src="/js/script.js"></script>
+</body>
 </html>

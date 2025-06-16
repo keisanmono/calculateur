@@ -1,0 +1,20 @@
+---
+// src/components/Sidebar.astro
+import ThemeSwitcher from './ThemeSwitcher.astro';
+---
+<div id="sidebar">
+    <nav id="sidebar-nav">
+        <a href="/">🏠 主页</a>
+        <a href="/about">✨ 关于我</a>
+        <a href="/blog_page1">📝 博客</a>
+        <a href="/contact">💌 联系我</a>
+        <a href="/download">📁 文件下载</a>
+        <a href="/ai_draw">🎨 AI 作画</a>
+        <a href="/tno_generator">📜 TNO事件生成</a>
+        <a href="/if_game">🌌 AI 互动小说</a>
+        <a href="/ai_rpg">💖 AI Galgame</a>
+        <a href="/vocab_learn">🧠 AI 背单词</a>
+    </nav>
+
+    <ThemeSwitcher /> <!-- 看这里！我们直接使用了组件 -->
+</div>
